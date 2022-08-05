@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <>
-      <header className="h-fit w-full">
+      <header className="h-fit w-full fixed z-50">
         <nav className='h-14 w-full flex flex-row justify-around
         py-3 bg-neutral-900 drop-shadow-md'>
           <h2 className="text-white">The Nav</h2>
