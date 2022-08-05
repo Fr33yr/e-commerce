@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <Layout>
-        <div className="w-full min-h-fit bg-neutral-800 pt-32 pb-16">
+        <div className="w-full min-h-screen bg-neutral-800 pt-32 pb-16">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/product' element={<Product />} />
