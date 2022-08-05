@@ -3,7 +3,7 @@ import React from 'react'
 export function Card() {
   return (
     <>
-      <div className='flex flex-col w-fit h-fit'>
+      <div className='flex flex-col w-fit h-fit drop-shadow-sm'>
         <img src="" alt="" height="153" width="207"
         className='max-w-full h-auto rounded-t'/>
         <div className='flex flex-col bg-stone-900 rounded-b'>
