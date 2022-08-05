@@ -12,7 +12,7 @@ import { Filters } from '../components/Filters'
 export function Home() {
   return (
     <>
-      <div className='max-w-5xl my-0 mx-auto pt-24 pb-8'>
+      <div className='max-w-5xl my-0 mx-auto pt-20 pb-8'>
         <Swiper
           spaceBetween={0}
           slidesPerView={4}
@@ -25,7 +25,7 @@ export function Home() {
         </Swiper>
       </div>
       <div>
-        <span className='block w-1/2 border-t-2 my-12 mx-auto'></span>
+        <span className='block w-1/2 border-t-2 my-12 mx-auto drop-shadow-sm'></span>
       </div>
       <div className='max-w-2xl my-0 mx-auto pt-8'>
         <Swiper
