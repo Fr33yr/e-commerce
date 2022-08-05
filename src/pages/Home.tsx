@@ -12,7 +12,7 @@ import { Filters } from '../components/Filters'
 export function Home() {
   return (
     <>
-      <div className='max-w-5xl my-0 mx-auto pt-28 pb-8'>
+      <div className='max-w-5xl my-0 mx-auto pb-8'>
         <Swiper
           spaceBetween={0}
           slidesPerView={4}
