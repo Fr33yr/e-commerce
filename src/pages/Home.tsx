@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Autoplay} from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -8,8 +8,15 @@ import 'swiper/css/navigation'
 import { Card } from '../components/cards/Card'
 import { OffSale } from '../components/cards/OffSale'
 import { Filters } from '../components/Filters'
+import {getData} from '../api/api'
+
 
 export function Home() {
+
+  useEffect(()=>{
+    getData()
+  },[])
+
   return (
     <>
       <div className='max-w-5xl my-0 mx-auto pb-8'>
