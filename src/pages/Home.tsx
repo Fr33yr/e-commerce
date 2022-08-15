@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -8,17 +8,25 @@ import 'swiper/css/navigation'
 import { ringType } from '../utils/utils'
 import { TypeCard } from '../components/cards/TypeCard'
 import { OffSale } from '../components/cards/OffSale'
+import { getData } from '../api/api'
 
 
 export function Home() {
+  const [data, setData ] = useState<Array<Data>>([])
 
+  useEffect(()=>{
+    getData().then(res => setData(res))
+    .catch(error => console.log(error))
+  },[])
+
+  
   return (
     <>
       <div className='max-w-full my-0 mx-4 pb-8 flex flex-wrap gap-8 justify-center
       drop-shadow-lg lg:mx-72'>
         {
-          ringType.map((item, index)=>(
-            <TypeCard {...item} key={index}/>
+          ringType.map((item, index) => (
+            <TypeCard {...item} key={index} />
           ))
         }
       </div>
@@ -32,9 +40,11 @@ export function Home() {
           slidesPerView={2}
           autoplay={{ delay: 5000 }}
         >
-          <SwiperSlide className='w-fit'><OffSale /></SwiperSlide>
-          <SwiperSlide className='w-fit'><OffSale /></SwiperSlide>
-          <SwiperSlide className='w-fit'><OffSale /></SwiperSlide>
+          {
+            data? data.filter(elem => elem.pricing.offsale > 0).map((item, index) => (
+              <SwiperSlide className='w-fit' key={index}><OffSale {...item}/></SwiperSlide>
+            )) : <img src="" alt="ring-img" height='168' width='304'></img>    
+          }
         </Swiper>
       </div>
     </>
