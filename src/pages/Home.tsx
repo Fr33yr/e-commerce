@@ -12,7 +12,7 @@ import { getData } from '../api/api'
 
 
 export function Home() {
-  const [data, setData ] = useState<Array<Data>>([])
+  const [data, setData ] = useState<Array<IData>>([])
 
   useEffect(()=>{
     getData().then(res => setData(res))

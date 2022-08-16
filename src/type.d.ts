@@ -1,4 +1,4 @@
-interface Data {
+interface IData {
     _id: string,
     name: string,
     imgUrl: string,
@@ -12,14 +12,14 @@ interface Data {
     }
 }
 
-type ProductState = {
-    product: Data
+interface IitemCart {
+    item: IData, amount: number
 }
 
-type ProductsState = {
-    products: Data[]
+interface ICart {
+   []
 }
 
-type CartState = {
-    cart: Data[]
+interface ISearch {
+    []
 }

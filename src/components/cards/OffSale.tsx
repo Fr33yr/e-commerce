@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export function OffSale({imgUrl, pricing}: Data) {
+export function OffSale({imgUrl, pricing}: IData) {
   return (
     <>
         <div className='flex flex-col w-fit h-fit'>
