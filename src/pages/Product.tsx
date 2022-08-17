@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import {useParams, useLocation} from 'react-router-dom'
 
-interface ProductProps {
-  _id: string,
-  name: string,
-  imgUrl: string,
-  description: {
-    specs: [],
-    text: string
-  },
-  pricing: {
-    price: number,
-    offsale: number
-  }
+const EmptyDataState: IData = {
+  _id: "",
+    name: "",
+    imgUrl: "",
+    description: {
+        specs: [],
+        text: ""
+    },
+    pricing: {
+        price: 0,
+        offsale: 0
+    }
 }
 
-export function Product({name, description, pricing, imgUrl}: ProductProps) {
+export function Product() {
+  const [data, setData] = useState<IData>(EmptyDataState)
+  const {imgUrl, pricing, description, name} = data
+  let location = useLocation()
+  const {_id} = useParams()
+
+  useEffect(()=>{
+    fetch(`https://floating-lowlands-72186.herokuapp.com/api/products/${_id}`)
+    .then(res => res.json())
+    .then(res => {
+      return res && setData(res)
+    })
+  },[location])
 
   return (
     <>

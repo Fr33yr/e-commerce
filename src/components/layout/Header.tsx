@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch } from 'react-redux'
+import { Link } from "react-router-dom";
 
 import { searchByName } from '../../api/api'
 import { searchResults } from '../../redux/states/search.state'
@@ -30,7 +31,7 @@ export function Header() {
       <header className="h-fit w-full fixed z-50">
         <nav className='h-14 w-full flex flex-row justify-around
         py-3 bg-neutral-900 drop-shadow-md'>
-          <h2 className="text-white">The Rings Store</h2>
+          <Link className="text-white" to="/">The Rings Store</Link>
           <form onSubmit={handleSubmit}>
             <input type="text" id="name" onChange={handleOnChange} value={name}
               className="border-2 border-white focus:outline-none" />

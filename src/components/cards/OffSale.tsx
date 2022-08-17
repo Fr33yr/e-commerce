@@ -1,7 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
-export function OffSale({imgUrl, pricing}: IData) {
+
+export function OffSale({imgUrl, pricing, _id, name, description}: IData) {
+  const props = {imgUrl, pricing, _id, name, description}
+  let navigate = useNavigate()
+
+  const handleOnClick = () => {
+    navigate(`/product/${_id}`)
+  }
+
   return (
     <>
         <div className='flex flex-col w-fit h-fit'>
@@ -10,7 +19,7 @@ export function OffSale({imgUrl, pricing}: IData) {
                 <p className='text-white'><s>${pricing.price}</s> ${pricing.offsale} </p>
             </div>
             <img src={imgUrl} alt="ring-img" height='210' width='210'
-            className='rounded cursor-pointer' />
+            className='rounded cursor-pointer' onClick={handleOnClick}/>
         </div>
     </>
   )
