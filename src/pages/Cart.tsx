@@ -12,9 +12,9 @@ const cartState = useSelector((state: RootState) => state.cart)
         <>
             <div className='max-w-fit flex flex-col justify-center
              gap-8 my-0 mx-auto overflow-scroll overflow-x-hidden'>
-                <CartItem/>
-                <CartItem/>
-                <CartItem/>
+                {
+                   cartState && cartState.map(element => <CartItem {...element}/>)
+                }
             </div>
         </>
     )

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 import { searchByName } from '../../api/api'
 import { searchResults } from '../../redux/states/search.state'
-import { AppDispatch } from "../../redux/store";
+import { AppDispatch, RootState } from "../../redux/store";
+import {useSelector} from 'react-redux'
 
 const defaultSearch = {
   name: ""
@@ -14,6 +15,7 @@ export function Header() {
   const [search, setSearch] = useState(defaultSearch)
   const { name } = search
   const dispatch = useDispatch<AppDispatch>()
+  const cartState = useSelector((state: RootState) => state.cart)
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch((prevState) => ({
@@ -41,7 +43,9 @@ export function Header() {
               Find
             </button>
           </form>
-          <h2 className="text-white">Cart</h2>
+          <h2 className="text-white">
+            <Link to="/cart" className="mr-2">Cart</Link> {cartState.length}
+          </h2>
         </nav>
       </header>
     </>
