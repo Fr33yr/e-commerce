@@ -36,3 +36,6 @@ export const ringType = [
         imgUrl: "https://res.cloudinary.com/da0mjatsk/image/upload/v1660331745/rings/wood_sy69sc.webp"
     }
 ]
+
+// Reducer function
+

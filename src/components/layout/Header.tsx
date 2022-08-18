@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { searchByName } from '../../api/api'
 import { searchResults } from '../../redux/states/search.state'
+import { AppDispatch } from "../../redux/store";
 
 const defaultSearch = {
   name: ""
@@ -12,7 +13,7 @@ const defaultSearch = {
 export function Header() {
   const [search, setSearch] = useState(defaultSearch)
   const { name } = search
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch((prevState) => ({

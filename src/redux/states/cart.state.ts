@@ -1,15 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export const CartEmptyState: ICart = {
-  cart: []
-}
+const CartEmptyState = [] as IData[]
 
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: CartEmptyState,
     reducers: {
-        addItem: (state, action) => action.payload,
-        removeItem: (state, action) => action.payload,
+        addItem: (state, action: PayloadAction<IData>) => {
+         state.push(action.payload)
+        },
+        removeItem: (state, action: PayloadAction<IData>) => {
+          state.push(action.payload) //cambiar luego
+        },
         resetCart: () => CartEmptyState
     }
 })
