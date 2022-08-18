@@ -1,8 +1,13 @@
 import React from 'react'
+import {useSelector} from 'react-redux'
 
 import {CartItem} from '../components/CartItem'
+import { RootState } from '../redux/store'
+
 
 export function Cart() {
+const cartState = useSelector((state: RootState) => state.cart)
+
     return (
         <>
             <div className='max-w-fit flex flex-col justify-center

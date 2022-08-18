@@ -13,11 +13,24 @@ interface IData {
 }
 
 interface IitemCart {
-    item: IData, amount: number
+    item: {
+        _id: string,
+        name: string,
+        imgUrl: string,
+        description: {
+            specs: [],
+            text: string
+        },
+        pricing: {
+            price: number,
+            offsale: number
+        }
+    },
+    amount: number
 }
 
 interface ICart {
-   []
+    []
 }
 
 interface ISearch {

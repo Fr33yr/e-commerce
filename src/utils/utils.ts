@@ -37,5 +37,4 @@ export const ringType = [
     }
 ]
 
-// Reducer function
-
+// Find count and find duplicates 
