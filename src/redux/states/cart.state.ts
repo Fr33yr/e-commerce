@@ -16,7 +16,12 @@ export const cartSlice = createSlice({
         },
         removeItem: (state, action: PayloadAction<IitemCart>) => {
           let {_id} = action.payload.item
-          state = state.filter(element => element.item._id !== _id)
+          const index = state.findIndex(obj => {
+            return obj.item._id === _id
+          })
+          if (index !== -1){
+            state.splice(index, 1)
+          }
         },
         increaseAmount: (state, action: PayloadAction<IitemCart>) => {
           let {_id} = action.payload.item
