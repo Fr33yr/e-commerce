@@ -16,7 +16,7 @@ export function TypeCard({ name, imgUrl }: CardItempProps) {
 
     const handleOnClick = () => {
         searchByName(name).then(res => dispatch(searchResults(res)))
-        navigate("/products")
+        navigate(`/products/${name}`)
     }
 
     return (

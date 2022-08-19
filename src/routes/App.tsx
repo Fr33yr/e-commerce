@@ -18,7 +18,7 @@ const App = () => {
         <div className="w-full min-h-screen bg-neutral-800 pt-32 pb-16">
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/products' element={<Products />}/>
+            <Route path='/products/:name' element={<Products />}/>
             <Route path='/product/:_id' element={<Product />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>

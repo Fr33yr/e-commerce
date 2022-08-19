@@ -3,7 +3,7 @@ import { useParams, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { addItem } from '../redux/states/cart.state'
-import { AppDispatch, RootState } from '../redux/store'
+import { AppDispatch } from '../redux/store'
 
 
 const EmptyDataState: IData = {
@@ -19,7 +19,7 @@ const EmptyDataState: IData = {
     offsale: 0
   }
 }
-
+ 
 export function Product() {
   const [data, setData] = useState<IData>(EmptyDataState)
   const { imgUrl, pricing, description, name } = data
@@ -39,8 +39,6 @@ export function Product() {
   const handleAddToCart = () => {
     dispatch(addItem({item: data, amount: 1}))
   }
-
- 
 
   return (
     <>

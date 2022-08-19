@@ -24,11 +24,11 @@ export function Header() {
       [event.target.id]: event.target.value
     }))
   }
-
+ 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     searchByName(search.name).then(res => dispatch(searchResults(res)))
-    navigate('/products')
+    navigate(`/products/${search.name}`)
   }
 
   return (
