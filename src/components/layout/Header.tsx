@@ -1,11 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { useDispatch } from 'react-redux'
+import {useSelector} from 'react-redux'
 import { Link, useNavigate } from "react-router-dom";
 
-import { searchByName } from '../../api/api'
-import { searchResults } from '../../redux/states/search.state'
-import { AppDispatch, RootState } from "../../redux/store";
-import {useSelector} from 'react-redux'
+import { RootState } from "../../redux/store";
+
 
 const defaultSearch = {
   name: ""
@@ -14,7 +12,6 @@ const defaultSearch = {
 export function Header() {
   const [search, setSearch] = useState(defaultSearch)
   const { name } = search
-  const dispatch = useDispatch<AppDispatch>()
   const cartState = useSelector((state: RootState) => state.cart)
   let navigate = useNavigate()
 
@@ -27,7 +24,6 @@ export function Header() {
  
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    searchByName(search.name).then(res => dispatch(searchResults(res)))
     navigate(`/products/${search.name}`)
   }
 

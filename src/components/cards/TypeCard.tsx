@@ -1,9 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import {useDispatch} from 'react-redux'
 
-import {searchByName} from '../../api/api'
-import {searchResults} from '../../redux/states/search.state'
 
 type CardItempProps = {
     name: string,
@@ -12,10 +9,8 @@ type CardItempProps = {
 
 export function TypeCard({ name, imgUrl }: CardItempProps) {
     let navigate = useNavigate()
-    const dispatch = useDispatch()
 
     const handleOnClick = () => {
-        searchByName(name).then(res => dispatch(searchResults(res)))
         navigate(`/products/${name}`)
     }
 
