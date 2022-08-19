@@ -13,7 +13,7 @@ const cartState = useSelector((state: RootState) => state.cart)
             <div className='max-w-fit flex flex-col justify-center
              gap-8 my-0 mx-auto overflow-scroll overflow-x-hidden'>
                 {
-                   cartState && cartState.map(element => <CartItem {...element}/>)
+                   cartState && cartState.map((element, index) => (<CartItem {...element} key={index}/>))
                 }
             </div>
         </>

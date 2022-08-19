@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const SearchEmptyState: ISearch = {
-    search: []
-}
-
+export const SearchEmptyState = [] as IData[] 
+ 
 export const searchSlice = createSlice({
     name: 'search',
     initialState: SearchEmptyState,

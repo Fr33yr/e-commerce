@@ -32,7 +32,3 @@ interface IitemCart {
 interface ICart {
     []
 }
-
-interface ISearch {
-    []
-}
