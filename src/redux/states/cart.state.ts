@@ -33,9 +33,13 @@ export const cartSlice = createSlice({
           const index = state.map(element => element.item._id).indexOf(_id)
           state[index].amount = state[index].amount - 1
         },
+        getLocalStorage: (state, action) => {
+         state = action.payload
+        },
         resetCart: () => CartEmptyState
     }
 })
 
-export const { addItem, removeItem, increaseAmount, decreaseAmount, resetCart} = cartSlice.actions
+export const { addItem, removeItem, increaseAmount, 
+  decreaseAmount, resetCart, getLocalStorage} = cartSlice.actions
 export default cartSlice.reducer

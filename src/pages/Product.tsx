@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { addItem } from '../redux/states/cart.state'
-import { AppDispatch } from '../redux/store'
+import { AppDispatch, RootState} from '../redux/store'
 
 
 const EmptyDataState: IData = {
@@ -26,6 +26,8 @@ export function Product() {
   let location = useLocation()
   const { _id } = useParams()
   const dispatch = useDispatch<AppDispatch>()
+  const cartState = useSelector((state: RootState) => state.cart)
+
 
   useEffect(() => {
     fetch(`https://floating-lowlands-72186.herokuapp.com/api/products/${_id}`)

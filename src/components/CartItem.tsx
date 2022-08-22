@@ -1,11 +1,14 @@
+import { useSelector } from 'react-redux'
 import {useDispatch} from 'react-redux'
 
 import {removeItem, increaseAmount, decreaseAmount} from '../redux/states/cart.state'
+import { RootState } from '../redux/store'
 
 
 export function CartItem({item, amount}:IitemCart) {
     const {_id, name, imgUrl, description, pricing} = item
     const dispatch = useDispatch()
+    const cartState = useSelector((state: RootState) => (state.cart))
 
     const handleIncrease = () => {
         dispatch(increaseAmount({item, amount}))
