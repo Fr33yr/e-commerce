@@ -1,11 +1,22 @@
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import {useSelector} from 'react-redux'
 
 import {CartItem} from '../components/CartItem'
+import { getLocalStorage } from '../redux/states/cart.state'
 import { RootState } from '../redux/store'
-import { useLocalStorage } from '../hooks/useLocalStorage'
 
 export function Cart() {
 const cartState = useSelector((state: RootState) => state.cart)
+const dispatch = useDispatch()
+
+    useEffect(()=>{
+        const items = localStorage.getItem('cart')
+        let localCart = items && JSON.parse(items)
+        if(items){
+            dispatch(getLocalStorage(localCart))
+        }
+    },[cartState])
 
     return (
         <>

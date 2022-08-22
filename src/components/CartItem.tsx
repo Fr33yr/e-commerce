@@ -1,25 +1,25 @@
 import { useSelector } from 'react-redux'
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-import {removeItem, increaseAmount, decreaseAmount} from '../redux/states/cart.state'
+import { removeItem, increaseAmount, decreaseAmount } from '../redux/states/cart.state'
 import { RootState } from '../redux/store'
 
 
-export function CartItem({item, amount}:IitemCart) {
-    const {_id, name, imgUrl, description, pricing} = item
+export function CartItem({ item, amount }: IitemCart) {
+    const { _id, name, imgUrl, description, pricing } = item
     const dispatch = useDispatch()
     const cartState = useSelector((state: RootState) => (state.cart))
 
     const handleIncrease = () => {
-        dispatch(increaseAmount({item, amount}))
+        dispatch(increaseAmount({ item, amount }))
     }
 
     const handleDecrease = () => {
-        dispatch(decreaseAmount({item, amount}))
+        dispatch(decreaseAmount({ item, amount }))
     }
 
     const handleRemove = () => {
-        dispatch(removeItem({item, amount}))
+        dispatch(removeItem({ item, amount }))
     }
 
     return (
@@ -34,7 +34,7 @@ export function CartItem({item, amount}:IitemCart) {
                     </p>
                     <button className='py-1 px-2 mt-6 border-2
                     border-white text-white text-center w-28'
-                    onClick={handleRemove}>Remove</button>
+                        onClick={handleRemove}>Remove</button>
                 </div>
                 <div className='flex flex-row ml-8'>
                     <div>
@@ -43,12 +43,12 @@ export function CartItem({item, amount}:IitemCart) {
                     <div className="flex flex-col ml-2">
                         <button className='p-2 bg-gray-600
                         text-white text-center'
-                        onClick={handleIncrease}>+</button>
+                            onClick={handleIncrease}>+</button>
                         <p className='p-2 text-white'>{amount}</p>
                         <button className='p-2 bg-gray-600
                         text-white text-center'
-                        onClick={handleDecrease}
-                        disabled={amount < 1? true : false}>-</button>
+                            onClick={handleDecrease}
+                            disabled={amount < 1 ? true : false}>-</button>
                     </div>
                 </div>
             </div>
