@@ -25,7 +25,7 @@ export function CartItem({ item, amount }: IitemCart) {
     return (
         <>
             <div className="max-w-2xl h-max bg-stone-900
-            grid grid-cols-3 p-6 drop-shadow-lg rounded-sm">
+            grid grid-cols-3 p-6 my-4 drop-shadow-lg rounded-sm">
                 <div className="col-span-2">
                     <h3 className='text-white p-2 pl-0'>{name}</h3>
                     <p className='text-gray-600 pr-2'>
