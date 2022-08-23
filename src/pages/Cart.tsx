@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { CartItem } from '../components/CartItem'
 import { getLocalStorage } from '../redux/states/cart.state'
 import { RootState } from '../redux/store'
+import { calcTotal } from '../utils/utils'
 
 export function Cart() {
     const cartState = useSelector((state: RootState) => state.cart)
@@ -26,8 +27,13 @@ export function Cart() {
                     cartState && cartState.map((element, index) => (<CartItem {...element} key={index} />))
                 }
             </div>
+            <div className='drop-shadow-lg mt-12'>
+                <span className='block w-1/2 border-t-2 mx-auto '></span>
+            </div>
             <div className='flex flex-row justify-center mt-12 ml-96'>
-                <h3 className='text-white'>$999</h3>
+                <p className='text-white'>
+                    Total: ${cartState && calcTotal(cartState)}
+                </p>
                 <button className='py-1 px-2 border-2 ml-32
                     border-white text-white text-center w-28'
                 >

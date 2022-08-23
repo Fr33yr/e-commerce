@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import {useSelector} from 'react-redux'
 import { Link, useNavigate } from "react-router-dom";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 
 import { RootState } from "../../redux/store";
 
@@ -41,9 +43,11 @@ export function Header() {
               Find
             </button>
           </form>
-          <h2 className="text-white">
-            <Link to="/cart" className="mr-2">Cart</Link> {cartState.length}
-          </h2>
+          <div className="text-white">
+            <Link to="/cart" className="mr-2">
+              <FontAwesomeIcon icon={faCartShopping}/>
+            </Link> {cartState.length}
+          </div>
         </nav>
       </header>
     </>
