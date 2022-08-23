@@ -8,7 +8,7 @@ const getData = () => {
 }
 
 const searchByName = (name: string) => {
-    return axios.get(`https://floating-lowlands-72186.herokuapp.com/api/products/?name=${name}`)
+    return axios.get(`https://floating-lowlands-72186.herokuapp.com/api/products?search=${name}`)
         .then(res => res.data)
 }
 

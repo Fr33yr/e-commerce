@@ -9,10 +9,10 @@ export function Products() {
     const {name} = useParams()
 
     useEffect(()=>{
-        fetch(`https://floating-lowlands-72186.herokuapp.com/api/products/?=${name}`)
+        fetch(`https://floating-lowlands-72186.herokuapp.com/api/products?search=${name}`)
         .then(res => res.json())
       .then(res => {
-        return res && setData(res)
+        return res && setData(res.products)
       })
       .catch(err => console.log(err))
     },[])    

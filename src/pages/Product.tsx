@@ -30,7 +30,7 @@ export function Product() {
 
 
   useEffect(() => {
-    fetch(`https://floating-lowlands-72186.herokuapp.com/api/products/${_id}`)
+    fetch(`https://floating-lowlands-72186.herokuapp.com/api/product/${_id}`)
       .then(res => res.json())
       .then(res => {
         return res && setData(res)

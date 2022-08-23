@@ -15,7 +15,7 @@ export function Home() {
   const [data, setData ] = useState<Array<IData>>([])
 
   useEffect(()=>{
-    getData().then(res => setData(res))
+    getData().then(res => setData(res.products))
     .catch(error => console.log(error))
   },[])
 
