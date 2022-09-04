@@ -1,4 +1,4 @@
-# ecommerce-e
+# e-commerce
 
 ## How it works 
 It comsumes an api using axios and react whit redux to manage the state.
