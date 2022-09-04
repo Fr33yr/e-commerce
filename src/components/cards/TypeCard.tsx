@@ -16,11 +16,11 @@ export function TypeCard({ name, imgUrl }: CardItempProps) {
 
     return (
         <>
-            <div className='flex flex-col w-fit h-fit drop-shadow-sm cursor-pointer
-            text-stone-600 hover:text-white' onClick={handleOnClick}>
+            <div className='flex flex-col w-32 h-fit drop-shadow-sm cursor-pointer
+            text-stone-600 hover:text-white md:w-fit' onClick={handleOnClick}>
                 <img src={imgUrl} alt="ring-img" height="153" width="207"
-                    className='max-w-full h-auto rounded-t' />
-                <div className='flex flex-col bg-stone-900 rounded-b p-3'>
+                    className='rounded-t' />
+                <div className=' bg-stone-900 rounded-b p-3'>
                     <p className=''>{name}</p>
                 </div>
             </div>

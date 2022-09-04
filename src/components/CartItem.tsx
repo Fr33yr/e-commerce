@@ -24,7 +24,7 @@ export function CartItem({ item, amount }: IitemCart) {
 
     return (
         <>
-            <div className="max-w-fit h-max bg-stone-900
+            <div className="max-w-md h-max bg-stone-900
             flex flex-col p-6 my-4 drop-shadow-lg rounded-sm">
                 <div className="flex flex-row">
                     <h3 className='text-white p-2 pl-0'>{name}</h3>
