@@ -37,7 +37,7 @@ export function Header() {
           <Link className="text-white" to="/">Rings</Link>
           <form onSubmit={handleSubmit}>
             <input type="text" id="name" onChange={handleOnChange} value={name}
-              className="border-2 border-white focus:outline-none" />
+              className="px-1 border-2 border-white focus:outline-none" />
             <button type="submit" className="px-2 border-2 border-white
             text-white">
               Find
