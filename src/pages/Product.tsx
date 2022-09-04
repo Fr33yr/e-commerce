@@ -45,9 +45,10 @@ export function Product() {
   return (
     <>
       <article className='min-h-fit my-32'>
-        <div className='flex flex-row bg-stone-900 
-      drop-shadow-md w-fit my-0 mx-auto'>
-          <img src={imgUrl} alt="ring-img" width="360" height="360" />
+        <div className='flex flex-col bg-stone-900 
+      drop-shadow-md w-fit my-0 mx-auto sm:flex-row'>
+          <img src={imgUrl} alt="ring-img" width="360" height="360"
+          className='m-auto mt-3 sm:m-0'/>
           <div className="flex flex-col p-4 max-w-sm">
             <h3 className='text-white mb-4'>{pricing.offsale ? pricing.offsale : pricing.price}</h3>
             <p className='text-stone-400 mb-2'>{name}</p>
