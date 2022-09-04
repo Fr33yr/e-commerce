@@ -36,7 +36,7 @@ export function Home() {
       <div className='max-w-2xl my-0 mx-auto pt-8'>
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={0}
+          spaceBetween={20}
           slidesPerView={2}
           autoplay={{ delay: 5000 }}
         >

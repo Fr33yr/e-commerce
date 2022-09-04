@@ -34,7 +34,7 @@ export function Header() {
       <header className="h-fit w-full fixed z-50">
         <nav className='h-14 w-full flex flex-row justify-around
         py-3 bg-neutral-900 drop-shadow-md'>
-          <Link className="text-white" to="/">The Rings Store</Link>
+          <Link className="text-white" to="/">Rings</Link>
           <form onSubmit={handleSubmit}>
             <input type="text" id="name" onChange={handleOnChange} value={name}
               className="border-2 border-white focus:outline-none" />

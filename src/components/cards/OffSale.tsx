@@ -13,11 +13,11 @@ export function OffSale({imgUrl, pricing, _id, name, description}: IData) {
 
   return (
     <>
-        <div className='flex flex-col w-fit h-fit'>
+        <div className='flex flex-col w-fit h-fit shrink mx-12'>
             <div className="flex flex-row justify-between bg-stone-900
             rounded-t-md px-4 pb-1" style={{maxWidth: "304px"}}>
                 <p className='text-stone-600'>Off sale</p>
-                <p className='text-white'><s className='pr-4'>${pricing.price}</s>  ${pricing.offsale} </p>
+                <p className='text-white text-right'><s className='text-right'>${pricing.price}</s>  ${pricing.offsale} </p>
             </div>
             <img src={imgUrl} alt="ring-img" height='210' width='210'
             className='rounded-b-md cursor-pointer' onClick={handleOnClick}/>
