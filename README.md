@@ -2,6 +2,7 @@
 
 ## How it works 
 It comsumes an api using axios and react whit redux to manage the state.
+<br/>Deploy: https://rings-store.netlify.app
 
 ## How to install and run the app localy
  First install all the dependencies using
