@@ -30,7 +30,7 @@ export function Cart() {
             <div className='drop-shadow-lg mt-12'>
                 <span className='block w-1/2 border-t-2 mx-auto '></span>
             </div>
-            <div className='flex flex-row justify-center mt-12 ml-96'>
+            <div className='flex flex-row justify-center mt-12'>
                 <p className='text-white'>
                     Total: ${cartState && calcTotal(cartState)}
                 </p>
